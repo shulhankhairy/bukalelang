@@ -1,5 +1,6 @@
 package com.lavelindo.bukalelang.detailProduct.domain
 
+import android.util.Log
 import com.lavelindo.bukalelang.common.domain.executor.MainThread
 import com.lavelindo.bukalelang.common.domain.executor.UseCaseExecutor
 import com.lavelindo.bukalelang.common.domain.usecase.AbstractUseCase

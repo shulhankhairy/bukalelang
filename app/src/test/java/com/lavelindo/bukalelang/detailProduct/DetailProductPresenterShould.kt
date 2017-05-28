@@ -40,8 +40,6 @@ class DetailProductPresenterShould {
 
         presenter.getProducts("1")
 
-        Mockito.verify(view, Mockito.timeout(100)).showLoading()
-        Mockito.verify(view, Mockito.timeout(100)).dismissLoading()
         Mockito.verify(view, Mockito.timeout(100)).showDetails(productCaptor.capture())
         assert(productCaptor.firstValue==details)
     }

@@ -1,5 +1,6 @@
 package com.lavelindo.bukalelang.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.lavelindo.bukalelang.R
+import com.lavelindo.bukalelang.detailProduct.DetailActivity
 import com.lavelindo.bukalelang.home.domain.Product
 import space.traversal.kapsule.Injects
 
@@ -51,7 +53,9 @@ class HomeFragment : Fragment(), HomeView, ProductsAdapter.ProductsEventListener
     }
 
     override fun goToDetailOf(product: Product) {
-        Toast.makeText(activity,"clicked",Toast.LENGTH_SHORT).show()
+        val i = Intent(activity,DetailActivity::class.java)
+        i.putExtra("id",product.id)
+        activity.startActivity(i)
     }
 
     override fun showProductList(products: List<Product>) {

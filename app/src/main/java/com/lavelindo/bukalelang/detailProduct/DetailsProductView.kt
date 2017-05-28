@@ -9,4 +9,5 @@ interface DetailsProductView {
     fun showLoading()
     fun dismissLoading()
     fun showDetails(detailsProduct: DetailsProduct)
+    fun showMessage(msg: String)
 }

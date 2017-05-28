@@ -1,5 +1,6 @@
 package com.lavelindo.bukalelang.detailProduct.domain
 
+import android.util.Log
 import com.lavelindo.bukalelang.common.api.BukalelangApi
 
 /**
@@ -12,8 +13,8 @@ class DetailsProductRepositoryImpl(var api: BukalelangApi): DetailsProductReposi
         val response = call.execute()
         when(response.code())
         {
-            200 -> return response.body() ?: DetailsProduct(0,"","","","","")
-            else -> return DetailsProduct(0,"","","","","")
+            200 -> return response.body() ?: DetailsProduct("0","","","","","","","","")
+            else -> return DetailsProduct("","","","","","","","","")
         }
     }
 }
