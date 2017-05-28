@@ -2,6 +2,7 @@ package com.lavelindo.bukalelang.home
 
 import com.lavelindo.bukalelang.common.api.BukalelangApi
 import com.lavelindo.bukalelang.home.domain.Product
+import com.lavelindo.bukalelang.home.domain.Products
 import com.lavelindo.bukalelang.home.domain.ProductsRepositoryImpl
 import com.nhaarman.mockito_kotlin.mock
 import okhttp3.ResponseBody
@@ -17,7 +18,7 @@ import retrofit2.Response
 class HomeRepositoryShould {
     lateinit var productsRepository: ProductsRepositoryImpl
     val bukalelangApi = mock<BukalelangApi>()
-    val call = mock<Call<List<Product>>>()
+    val call = mock<Call<Products>>()
 
     @Before
     fun setUp() {
@@ -29,12 +30,13 @@ class HomeRepositoryShould {
         val product1 = Product("1","sepda","rp 100","sekarang")
         val product2 = Product("2","laptop","rp 60","sekarang")
         val product3 = Product("3","mobil","rp 200","sekarang")
-        val products = listOf(product1,product2,product3)
+        val product = listOf(product1,product2,product3)
+        val products = Products(product)
 
         Mockito.`when`(call.execute()).thenReturn(Response.success(products))
         Mockito.`when`(bukalelangApi.getProducts()).thenReturn(call)
 
-        assert(productsRepository.getProducts()==products)
+        assert(productsRepository.getProducts()==product)
     }
 
     @Test
