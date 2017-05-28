@@ -32,9 +32,9 @@ class HomePresenterShould {
 
     @Test
     fun tellScreenToShowProducts() {
-        val product1 = Product(1,"jupiter","100")
-        val product2 = Product(2,"ps4","50")
-        val product3 = Product(3,"jaket spidey","9")
+        val product1 = Product("1","jupiter","100","sekarang")
+        val product2 = Product("2","ps4","50","sekarang")
+        val product3 = Product("3","jaket spidey","9","sekarang")
         val products = listOf(product1,product2,product3)
 
         Mockito.`when`(productsRepository.getProducts()).thenReturn(products)
@@ -49,9 +49,9 @@ class HomePresenterShould {
 
     @Test
     fun tellScreenToGoToDetailProduct() {
-        val product1 = Product(1,"jupiter","100")
-        val product2 = Product(2,"ps4","50")
-        val product3 = Product(3,"jaket spidey","9")
+        val product1 = Product("1","jupiter","100","sekarang")
+        val product2 = Product("2","ps4","50","sekarang")
+        val product3 = Product("3","jaket spidey","9","sekarang")
         val products = listOf(product1,product2,product3)
 
         homePresenter.onItemClicked(products,0)

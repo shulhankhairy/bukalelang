@@ -1,9 +1,10 @@
 package com.lavelindo.bukalelang.common.api
 
-import com.lavelindo.bukalelang.home.domain.Product
+import com.lavelindo.bukalelang.home.domain.Products
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 import retrofit2.Call
+import retrofit2.http.GET
 
 
 /**
@@ -11,7 +12,6 @@ import retrofit2.Call
  */
 interface BukalelangApi {
 
-    @FormUrlEncoded
-    @POST("/getProducts")
-    fun getProducts(): Call<List<Product>>
+    @GET("get_product.php")
+    fun getProducts(): Call<Products>
 }

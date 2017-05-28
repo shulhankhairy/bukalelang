@@ -26,9 +26,9 @@ class HomeRepositoryShould {
 
     @Test
     fun showProducts() {
-        val product1 = Product(1,"sepda","rp 100")
-        val product2 = Product(2,"laptop","rp 60")
-        val product3 = Product(3,"mobil","rp 200")
+        val product1 = Product("1","sepda","rp 100","sekarang")
+        val product2 = Product("2","laptop","rp 60","sekarang")
+        val product3 = Product("3","mobil","rp 200","sekarang")
         val products = listOf(product1,product2,product3)
 
         Mockito.`when`(call.execute()).thenReturn(Response.success(products))

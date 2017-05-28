@@ -4,12 +4,11 @@ import android.os.Handler
 import android.os.Looper
 
 
-
 /**
  * Created by sujarwe on 5/23/17.
  */
 class MainThreadImpl
-internal constructor() : MainThread {
+constructor() : MainThread {
 
     private val mHandler: Handler
 
