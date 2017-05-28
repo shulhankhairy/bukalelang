@@ -17,10 +17,22 @@ import java.util.zip.Inflater
 
 class DetailActivity : AppCompatActivity() {
 
+    lateinit var nama: TextView
+    lateinit var harga: TextView
+    lateinit var tglMulai: TextView
+    lateinit var tglSelesai: TextView
+    lateinit var desc: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
+        nama = findViewById(R.id.detail_nama) as TextView
+        harga = findViewById(R.id.detail_harga) as TextView
+        tglMulai = findViewById(R.id.detail_tgl_mulai) as TextView
+        tglSelesai = findViewById(R.id.detail_tgl_selesai) as TextView
+        desc = findViewById(R.id.detail_desc) as TextView
+        
         setSupportActionBar(toolbar)
 
         val fab = findViewById(R.id.fab) as FloatingActionButton
